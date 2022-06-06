@@ -1,0 +1,57 @@
+@import 'variables.scss';
+@import 'header.scss';
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.menu {
+    display: flex;
+    margin: 0;
+    padding: 0 3em 0;
+    text-transform: uppercase;
+  }
+
+  .menu__item:hover {
+    background-color: #9ACD32;
+    cursor: pointer;
+  }
+
+  .menu__item {
+    position: relative;
+    padding: 0 8px;
+    line-height: 3em;
+    color: white;
+    list-style-type: none;
+    &_active {
+      color: yellow;
+      &:hover {
+        .submenu {
+          display: block;
+          color: white;
+          left: 10px;
+          box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+          min-width: 120px;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  .submenu {
+    position: absolute;
+    display: none;
+    margin: 0;
+    padding-left: 8px;
+    background-color: coral;
+    color: black;
+    list-style-type: none;
+    &__item:hover {
+      color: black;
+    }
+  }
